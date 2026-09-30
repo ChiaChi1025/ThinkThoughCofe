@@ -1,764 +1,1002 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>本期豆單｜思沐咖啡 ThinkThough Coffee</title>
-<meta name="description" content="思沐咖啡 ThinkThough Coffee 本期咖啡豆與耳掛咖啡。">
+<title>本期豆單｜ThinkThough Coffee</title>
 
 <style>
+
 :root{
-  --blue:#17384f;
-  --blue-hover:#244d68;
-  --cream:#f4efe6;
+  --blue:#173f5f;
+  --blue-dark:#12344f;
+  --cream:#f5efe4;
   --paper:#fffdf8;
-  --white:#ffffff;
   --text:#17344d;
-  --body:#626763;
-  --muted:#858985;
+  --muted:#74756f;
   --brown:#95633f;
-  --line:#e2dbcf;
+  --line:#ded7ca;
 }
 
-*{box-sizing:border-box;}
+*{
+  box-sizing:border-box;
+}
 
 html{
   scroll-behavior:smooth;
-  scroll-padding-top:145px;
 }
 
 body{
   margin:0;
   background:var(--paper);
   color:var(--text);
-  font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif;
-  -webkit-font-smoothing:antialiased;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Noto Sans TC",
+    "PingFang TC",
+    sans-serif;
 }
 
-img{width:100%;display:block;}
-a{color:inherit;}
 
-/* ===== NAV ===== */
+/* =========================
+   NAV
+========================= */
 
-.site-nav{
-  position:fixed;
+.site-header{
+  position:sticky;
   top:0;
-  left:0;
-  right:0;
-  height:72px;
-  z-index:1000;
+  z-index:100;
+
+  background:rgba(255,253,248,.96);
+
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+
+  border-bottom:1px solid rgba(222,215,202,.8);
+}
+
+.nav{
+  max-width:1200px;
+  height:86px;
+  margin:auto;
+  padding:0 28px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 6%;
-  background:rgba(255,253,248,.94);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(222,214,200,.65);
 }
 
-.nav-logo{
-  color:var(--blue);
+.logo{
+  color:var(--text);
   text-decoration:none;
-  font-family:"Noto Serif TC","Songti TC",serif;
-  font-size:19px;
+
+  font-family:"Noto Serif TC",serif;
+  font-size:21px;
   font-weight:700;
+
   letter-spacing:.08em;
 }
 
 .nav-links{
   display:flex;
-  gap:34px;
-  align-items:center;
+  gap:42px;
 }
 
 .nav-links a{
   position:relative;
-  padding:25px 0 22px;
-  color:var(--blue);
+
+  color:var(--text);
   text-decoration:none;
-  font-size:14px;
+
+  font-size:15px;
   font-weight:700;
-  letter-spacing:.06em;
+  letter-spacing:.05em;
+
+  padding:30px 0;
 }
 
 .nav-links a::after{
   content:"";
+
   position:absolute;
-  left:50%;
-  bottom:17px;
-  width:0;
+  left:0;
+  right:0;
+  bottom:22px;
+
   height:1px;
   background:var(--blue);
-  transform:translateX(-50%);
+
+  transform:scaleX(0);
   transition:.25s;
 }
 
 .nav-links a:hover::after,
 .nav-links a.active::after{
-  width:100%;
+  transform:scaleX(1);
 }
 
-/* ===== HERO ===== */
 
-.hero{
-  min-height:67vh;
-  padding:150px 24px 90px;
-  background:var(--blue);
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
+/* =========================
+   HERO
+========================= */
+
+.menu-hero{
+  max-width:1200px;
+  margin:auto;
+
+  padding:105px 28px 85px;
+
+  display:grid;
+  grid-template-columns:1fr .7fr;
+
+  gap:60px;
+  align-items:end;
 }
 
-.hero-inner{max-width:800px;}
+.menu-label{
+  color:var(--brown);
 
-.hero-kicker{
-  margin-bottom:20px;
   font-size:12px;
-  font-weight:700;
-  letter-spacing:.34em;
-  opacity:.7;
+  letter-spacing:.28em;
+
+  font-weight:800;
+
+  margin-bottom:22px;
 }
 
-.hero h1{
+.menu-hero h1{
+  font-family:"Noto Serif TC",serif;
+
+  font-size:clamp(50px,7vw,82px);
+
+  font-weight:600;
+
+  line-height:1.2;
+
   margin:0;
-  font-family:"Noto Serif TC","Songti TC",serif;
-  font-size:clamp(48px,7vw,78px);
-  font-weight:500;
-  letter-spacing:.06em;
+
+  letter-spacing:.04em;
 }
 
-.hero-line{
-  width:38px;
-  height:1px;
-  margin:28px auto;
-  background:rgba(255,255,255,.55);
-}
+.menu-intro{
+  color:var(--muted);
 
-.hero p{
-  margin:0;
-  font-size:16px;
   line-height:2;
-  letter-spacing:.08em;
-  opacity:.83;
+
+  font-size:15px;
+
+  padding-bottom:8px;
 }
 
-/* ===== CATEGORY ===== */
 
-.category-wrap{
-  position:sticky;
-  top:72px;
-  z-index:50;
-  background:rgba(255,253,248,.96);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
+/* =========================
+   CATEGORY NAV
+========================= */
+
+.category-nav{
+  border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 }
 
-.category-nav{
-  max-width:1180px;
+.category-inner{
+  max-width:1200px;
+
   margin:auto;
-  padding:17px 22px;
+
+  padding:20px 28px;
+
   display:flex;
-  justify-content:center;
-  gap:10px;
+
+  gap:35px;
 }
 
-.category-nav a{
-  min-width:125px;
-  padding:10px 24px;
-  border:1px solid var(--blue);
-  border-radius:999px;
-  color:var(--blue);
+.category-inner a{
+  color:var(--text);
+
   text-decoration:none;
-  text-align:center;
-  font-size:13px;
+
+  font-size:14px;
+
   font-weight:700;
-  letter-spacing:.06em;
-  transition:.2s;
-}
 
-.category-nav a:hover{
-  background:var(--blue);
-  color:white;
-}
-
-/* ===== MAIN ===== */
-
-main{
-  max-width:1180px;
-  margin:auto;
-  padding:95px 24px 120px;
-}
-
-.section-heading{
-  margin-bottom:50px;
-  text-align:center;
-}
-
-.eyebrow{
-  margin-bottom:12px;
-  color:var(--brown);
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:.28em;
-}
-
-.section-heading h2{
-  margin:0 0 12px;
-  color:var(--blue);
-  font-family:"Noto Serif TC","Songti TC",serif;
-  font-size:clamp(31px,4vw,43px);
-  font-weight:500;
   letter-spacing:.05em;
 }
 
-.section-heading p{
-  margin:0;
+.category-inner a:hover{
+  color:var(--brown);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.menu-section{
+  max-width:1200px;
+
+  margin:auto;
+
+  padding:100px 28px;
+}
+
+.menu-section + .menu-section{
+  border-top:1px solid var(--line);
+}
+
+.section-head{
+  margin-bottom:50px;
+}
+
+.eyebrow{
+  color:var(--brown);
+
+  font-size:12px;
+
+  letter-spacing:.28em;
+
+  font-weight:800;
+
+  margin-bottom:15px;
+}
+
+.section-head h2{
+  font-family:"Noto Serif TC",serif;
+
+  font-size:40px;
+
+  margin:0 0 10px;
+
+  font-weight:600;
+}
+
+.section-head p{
   color:var(--muted);
+
+  margin:0;
+
   font-size:14px;
 }
 
-/* ===== PRODUCT ===== */
 
-.product-grid{
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.grid{
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
-  gap:28px;
+
+  gap:26px;
 }
 
-.product-card{
+.card{
   background:white;
+
   border:1px solid var(--line);
+
   display:flex;
+
   flex-direction:column;
-  overflow:hidden;
-  transition:.3s;
+
+  transition:.25s;
 }
 
-.product-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 18px 45px rgba(23,56,79,.08);
+.card:hover{
+  transform:translateY(-4px);
+
+  box-shadow:0 18px 45px rgba(20,45,65,.08);
 }
 
-.product-image{
-  overflow:hidden;
-}
+.card img{
+  width:100%;
 
-.product-image img{
   aspect-ratio:1/1;
+
   object-fit:cover;
-  transition:.6s;
+
+  display:block;
 }
 
-.product-card:hover .product-image img{
-  transform:scale(1.025);
-}
+.card-body{
+  padding:24px;
 
-.product-body{
-  padding:24px 23px 25px;
   display:flex;
+
   flex-direction:column;
+
   flex:1;
 }
 
-.product-meta{
-  margin-bottom:10px;
+.roast{
   color:var(--brown);
+
   font-size:11px;
+
+  letter-spacing:.12em;
+
   font-weight:800;
-  letter-spacing:.1em;
+
+  margin-bottom:10px;
 }
 
-.product-body h3{
-  margin:0 0 10px;
-  color:var(--blue);
-  font-family:"Noto Serif TC","Songti TC",serif;
-  font-size:20px;
-  font-weight:600;
+.card h3{
+  font-family:"Noto Serif TC",serif;
+
+  color:var(--text);
+
+  font-size:19px;
+
   line-height:1.55;
+
+  margin:0 0 10px;
 }
 
 .flavor{
-  margin:0 0 22px;
-  color:var(--body);
+  color:var(--muted);
+
   font-size:14px;
+
   line-height:1.8;
+
+  margin:0 0 20px;
 }
 
 .price{
-  margin-top:auto;
-  padding-top:17px;
   border-top:1px solid #eee8de;
+
+  padding-top:15px;
+
+  margin-top:auto;
+
   color:var(--blue);
-  font-family:"Noto Serif TC",serif;
-  font-size:20px;
-  font-weight:700;
+
+  font-size:18px;
+
+  font-weight:800;
+}
+
+.price + .price{
+  border-top:0;
+
+  padding-top:7px;
+
+  margin-top:0;
 }
 
 .price small{
   display:block;
-  margin-top:4px;
+
   color:var(--muted);
-  font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif;
-  font-size:12px;
-  font-weight:400;
+
+  font-size:11px;
+
+  font-weight:500;
+
+  margin-top:4px;
 }
 
-.second-price{
-  margin-top:7px;
-  padding-top:0;
-  border-top:0;
+
+/* =========================
+   ORDER
+========================= */
+
+.order-wrap{
+  max-width:1200px;
+
+  margin:auto;
+
+  padding:0 28px 110px;
 }
 
-.drip-section{
-  margin-top:120px;
-  padding-top:95px;
-  border-top:1px solid var(--line);
-}
-
-/* ===== ORDER ===== */
-
-.order{
-  margin-top:110px;
-  padding:75px 30px;
+.order-box{
   background:var(--cream);
+
+  padding:70px 25px;
+
   text-align:center;
 }
 
-.order h2{
-  margin:0 0 18px;
-  color:var(--blue);
-  font-family:"Noto Serif TC","Songti TC",serif;
-  font-size:clamp(28px,4vw,39px);
-  font-weight:500;
+.order-box .eyebrow{
+  margin-bottom:15px;
 }
 
-.order p{
-  margin:0;
-  color:var(--body);
+.order-box h2{
+  font-family:"Noto Serif TC",serif;
+
+  font-size:34px;
+
+  margin:0 0 20px;
+
+  font-weight:600;
+}
+
+.order-box p{
+  color:var(--muted);
+
   font-size:14px;
+
   line-height:2;
+
+  margin:0;
 }
 
-.primary-button{
+.order-btn{
   display:inline-block;
-  margin-top:28px;
-  padding:15px 31px;
+
+  margin-top:30px;
+
   background:var(--blue);
-  border-radius:999px;
+
   color:white;
+
   text-decoration:none;
+
+  border-radius:999px;
+
+  padding:15px 30px;
+
   font-size:14px;
+
   font-weight:700;
-  letter-spacing:.05em;
-  transition:.25s;
+
+  transition:.2s;
 }
 
-.primary-button:hover{
-  background:var(--blue-hover);
+.order-btn:hover{
+  background:var(--blue-dark);
+
   transform:translateY(-2px);
 }
 
-/* ===== INFO ===== */
+.shipping{
+  max-width:700px;
 
-.info{
-  max-width:800px;
-  margin:35px auto 0;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:1px;
-  background:var(--line);
-  border:1px solid var(--line);
-}
+  margin:45px auto 0;
 
-.info-item{
-  padding:28px;
-  background:var(--paper);
-}
+  padding-top:35px;
 
-.info-item strong{
-  display:block;
-  margin-bottom:8px;
-  color:var(--blue);
-  font-size:14px;
-}
+  border-top:1px solid var(--line);
 
-.info-item p{
-  margin:0;
-  color:var(--body);
+  color:var(--muted);
+
   font-size:13px;
-  line-height:1.9;
+
+  line-height:2;
 }
 
-/* ===== FOOTER ===== */
 
-.site-footer{
-  padding:70px 25px 35px;
-  background:var(--blue);
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:var(--blue-dark);
+
   color:white;
+
+  padding:65px 25px 40px;
+
   text-align:center;
 }
 
-.footer-logo{
+.footer-name{
   font-family:"Noto Serif TC",serif;
+
   font-size:24px;
-  letter-spacing:.08em;
+
+  margin-bottom:8px;
 }
 
 .footer-en{
-  margin:9px 0 28px;
-  font-size:10px;
-  letter-spacing:.24em;
-  opacity:.55;
-}
-
-.footer-info{
   font-size:13px;
+
+  letter-spacing:.12em;
+
+  opacity:.7;
+}
+
+.footer-address{
+  font-size:12px;
+
   line-height:2;
-  opacity:.8;
+
+  opacity:.65;
+
+  margin-top:20px;
 }
 
-.footer-info a{
-  color:white;
-  text-decoration:none;
-}
-
-.social-icons{
+.socials{
   display:flex;
+
   justify-content:center;
-  align-items:center;
-  gap:12px;
-  margin-top:28px;
+
+  gap:14px;
+
+  margin:28px 0;
 }
 
-.social-icons a{
+.socials a{
   width:43px;
   height:43px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+
   border:1px solid rgba(255,255,255,.45);
+
   border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
   color:white;
-  transition:.25s;
+
+  transition:.2s;
 }
 
-.social-icons a:hover{
+.socials a:hover{
   background:white;
+
   color:var(--blue);
-  transform:translateY(-2px);
 }
 
-.social-icons svg{
+.socials svg{
   width:19px;
   height:19px;
 }
 
-.instagram-icon{
+.instagram svg{
   fill:none;
+
   stroke:currentColor;
+
   stroke-width:1.8;
 }
 
-.facebook-icon{
+.facebook svg{
   fill:currentColor;
 }
 
-.footer-nav{
-  margin-top:28px;
-  display:flex;
-  justify-content:center;
-  gap:24px;
-}
-
-.footer-nav a{
-  color:white;
-  text-decoration:none;
-  font-size:12px;
-  opacity:.65;
-}
-
-.footer-nav a:hover{opacity:1;}
-
 .copyright{
-  max-width:900px;
-  margin:38px auto 0;
-  padding-top:22px;
-  border-top:1px solid rgba(255,255,255,.12);
-  font-size:10px;
-  letter-spacing:.1em;
-  opacity:.4;
+  font-size:11px;
+
+  opacity:.5;
+
+  margin-top:25px;
 }
 
-/* ===== RESPONSIVE ===== */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:850px){
-  .product-grid{
+
+  .grid{
     grid-template-columns:repeat(2,1fr);
   }
-}
 
-@media(max-width:600px){
-
-  html{scroll-padding-top:125px;}
-
-  .site-nav{
-    height:62px;
-    padding:0 18px;
+  .menu-hero{
+    grid-template-columns:1fr;
+    gap:25px;
   }
 
-  .nav-logo{font-size:16px;}
+}
 
-  .nav-links{gap:18px;}
+@media(max-width:560px){
+
+  .nav{
+    height:72px;
+    padding:0 16px;
+  }
+
+  .logo{
+    font-size:16px;
+  }
+
+  .nav-links{
+    gap:16px;
+  }
 
   .nav-links a{
-    padding:21px 0 18px;
     font-size:12px;
+    padding:25px 0;
   }
 
   .nav-links a::after{
-    bottom:13px;
+    bottom:17px;
   }
 
-  .hero{
-    min-height:58vh;
-    padding:125px 22px 70px;
+  .menu-hero{
+    padding:75px 22px 60px;
   }
 
-  .hero h1{font-size:48px;}
-
-  .hero p{font-size:14px;}
-
-  .category-wrap{top:62px;}
-
-  .category-nav{
-    padding:13px 18px;
+  .category-inner{
+    padding:18px 22px;
   }
 
-  .category-nav a{
-    flex:1;
-    min-width:0;
+  .menu-section{
+    padding:75px 22px;
   }
 
-  main{
-    padding:70px 20px 85px;
-  }
-
-  .product-grid{
+  .grid{
     grid-template-columns:1fr;
-    gap:22px;
+    gap:20px;
   }
 
-  .product-body{padding:20px;}
-
-  .drip-section{
-    margin-top:85px;
-    padding-top:70px;
+  .order-wrap{
+    padding:0 22px 80px;
   }
 
-  .order{
-    margin-top:85px;
-    padding:55px 22px;
+  .order-box{
+    padding:55px 20px;
   }
 
-  .info{
-    grid-template-columns:1fr;
-  }
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<nav class="site-nav">
-  <a class="nav-logo" href="index.html">思沐咖啡</a>
+
+<!-- ================= NAV ================= -->
+
+<header class="site-header">
+
+<nav class="nav">
+
+  <a class="logo" href="about.html">
+    思沐咖啡
+  </a>
 
   <div class="nav-links">
-    <a href="about.html">關於思沐</a>
-    <a class="active" href="index.html">本期豆單</a>
+
+    <a href="about.html">
+      關於思沐
+    </a>
+
+    <a class="active" href="index.html">
+      本期豆單
+    </a>
+
   </div>
+
 </nav>
 
-
-<header class="hero">
-  <div class="hero-inner">
-    <div class="hero-kicker">ThinkThough Coffee · TAIPEI</div>
-
-    <h1>本期豆單</h1>
-
-    <div class="hero-line"></div>
-
-    <p>
-      從日常的一杯開始，<br>
-      挑一支適合今天的咖啡。
-    </p>
-  </div>
 </header>
 
 
-<div class="category-wrap">
-  <div class="category-nav">
-    <a href="#coffee">咖啡豆</a>
-    <a href="#drip">耳掛咖啡</a>
-  </div>
-</div>
+<!-- ================= HERO ================= -->
 
+<section class="menu-hero">
 
-<main>
+  <div>
 
-<section id="coffee">
+    <div class="menu-label">
+      ThinkThough Coffee
+    </div>
 
-  <div class="section-heading">
-    <div class="eyebrow">COFFEE BEANS</div>
-    <h2>本期咖啡豆</h2>
-    <p>225g 包裝｜特殊處理批次另有 115g</p>
-  </div>
-
-  <div class="product-grid">
-
-    <article class="product-card">
-      <div class="product-image">
-        <img src="ethiopia-guji.jpg" alt="衣索比亞日曬古吉馬蹄蘭G1">
-      </div>
-
-      <div class="product-body">
-        <div class="product-meta">淺烘焙 · 日曬</div>
-        <h3>衣索比亞 日曬<br>古吉 馬蹄蘭 G1</h3>
-        <p class="flavor">黑莓・紫羅蘭・巧克力松露</p>
-
-        <div class="price">
-          NT$800
-          <small>225g / 包</small>
-        </div>
-      </div>
-    </article>
-
-
-    <article class="product-card">
-      <div class="product-image">
-        <img src="ethiopia-yirgacheffe.jpg" alt="衣索比亞水洗耶加雪菲G1">
-      </div>
-
-      <div class="product-body">
-        <div class="product-meta">淺烘焙 · 水洗</div>
-        <h3>衣索比亞 水洗<br>耶加雪菲 G1</h3>
-        <p class="flavor">柚子・檸檬皮・柳橙</p>
-
-        <div class="price">
-          NT$800
-          <small>225g / 包</small>
-        </div>
-      </div>
-    </article>
-
-
-    <article class="product-card">
-      <div class="product-image">
-        <img src="guatemala-flora.jpg" alt="瓜地馬拉水洗花神">
-      </div>
-
-      <div class="product-body">
-        <div class="product-meta">中深焙 · 水洗</div>
-        <h3>瓜地馬拉 水洗<br>花神</h3>
-        <p class="flavor">黑巧克力・榛果・柑橘皮</p>
-
-        <div class="price">
-          NT$800
-          <small>225g / 包</small>
-        </div>
-      </div>
-    </article>
-
-
-    <article class="product-card">
-      <div class="product-image">
-        <img src="colombia-rum.jpg" alt="哥倫比亞聖荷西莊園">
-      </div>
-
-      <div class="product-body">
-        <div class="product-meta">中淺焙 · 日曬蘭姆桶發酵</div>
-        <h3>哥倫比亞<br>聖荷西莊園</h3>
-        <p class="flavor">威士忌・黑巧克力・葡萄乾</p>
-
-        <div class="price">
-          NT$800
-          <small>115g / 包</small>
-        </div>
-
-        <div class="price second-price">
-          NT$1,200
-          <small>225g / 包</small>
-        </div>
-      </div>
-    </article>
-
-
-    <article class="product-card">
-      <div class="product-image">
-        <img src="colombia-apricot.jpg" alt="哥倫比亞卡斯提優杏桃">
-      </div>
-
-      <div class="product-body">
-        <div class="product-meta">中淺焙 · 酵素水洗</div>
-        <h3>哥倫比亞 卡斯提優<br>杏桃</h3>
-        <p class="flavor">水蜜桃軟糖・乳酸飲・黑巧克力</p>
-
-        <div class="price">
-          NT$800
-          <small>115g / 包</small>
-        </div>
-
-        <div class="price second-price">
-          NT$1,200
-          <small>225g / 包</small>
-        </div>
-      </div>
-    </article>
-
-
-    <article class="product-card">
-      <div class="product-image">
-        <img src="thinkthough-blend.jpg" alt="思沐配方">
-      </div>
-
-      <div class="product-body">
-        <div class="product-meta">中烘焙 · 配方豆</div>
-        <h3>思沐配方<br>西達摩 × 瓜地馬拉</h3>
-        <p class="flavor">香檳葡萄・玫瑰花・楓糖</p>
-
-        <div class="price">
-          NT$800
-          <small>225g / 包</small>
-        </div>
-      </div>
-    </article>
+    <h1>
+      本期豆單
+    </h1>
 
   </div>
+
+
+  <div class="menu-intro">
+
+    給時間按下暫停鍵<br>
+    一杯咖啡、一個角落、足夠裝下獨處的暇意。
+
+  </div>
+
 </section>
 
 
-<section id="drip" class="drip-section">
+<!-- ================= CATEGORY ================= -->
 
-  <div class="section-heading">
-    <div class="eyebrow">DRIP BAG</div>
-    <h2>耳掛咖啡</h2>
-    <p>一包一杯，把喜歡的味道帶著走。</p>
+<div class="category-nav">
+
+  <div class="category-inner">
+
+    <a href="#beans">
+      咖啡豆
+    </a>
+
+    <a href="#drip">
+      耳掛咖啡
+    </a>
+
   </div>
 
-  <div class="product-grid">
+</div>
 
-    <article class="product-card">
-      <div class="product-image">
-        <img src="selected-blend.jpg" alt="思沐嚴選">
+
+<!-- ================= COFFEE BEANS ================= -->
+
+<section class="menu-section" id="beans">
+
+  <div class="section-head">
+
+    <div class="eyebrow">
+      COFFEE BEANS
+    </div>
+
+    <h2>
+      咖啡豆
+    </h2>
+
+    <p>
+      225g 包裝｜特殊處理批次另有 115g
+    </p>
+
+  </div>
+
+
+  <div class="grid">
+
+
+    <!-- 1 -->
+
+    <article class="card">
+
+      <img
+        src="ethiopia-guji.jpg"
+        alt="衣索比亞日曬古吉馬蹄蘭">
+
+      <div class="card-body">
+
+        <div class="roast">
+          淺烘焙 · 日曬
+        </div>
+
+        <h3>
+          衣索比亞 日曬<br>
+          古吉 馬蹄蘭 G1
+        </h3>
+
+        <p class="flavor">
+          黑莓・紫羅蘭・巧克力松露
+        </p>
+
+        <div class="price">
+          NT$800
+          <small>225g / 包</small>
+        </div>
+
       </div>
 
-      <div class="product-body">
-        <div class="product-meta">深烘焙 · 配方</div>
-        <h3>思沐嚴選</h3>
+    </article>
+
+
+    <!-- 2 -->
+
+    <article class="card">
+
+      <img
+        src="ethiopia-yirgacheffe.jpg"
+        alt="衣索比亞水洗耶加雪菲">
+
+      <div class="card-body">
+
+        <div class="roast">
+          淺烘焙 · 水洗
+        </div>
+
+        <h3>
+          衣索比亞 水洗<br>
+          耶加雪菲 G1
+        </h3>
+
+        <p class="flavor">
+          柚子・檸檬皮・柳橙
+        </p>
+
+        <div class="price">
+          NT$800
+          <small>225g / 包</small>
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- 3 -->
+
+    <article class="card">
+
+      <img
+        src="guatemala-flora.jpg"
+        alt="瓜地馬拉水洗花神">
+
+      <div class="card-body">
+
+        <div class="roast">
+          中深焙 · 水洗
+        </div>
+
+        <h3>
+          瓜地馬拉 水洗<br>
+          花神
+        </h3>
+
+        <p class="flavor">
+          黑巧克力・榛果・柑橘皮
+        </p>
+
+        <div class="price">
+          NT$800
+          <small>225g / 包</small>
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- 4 -->
+
+    <article class="card">
+
+      <img
+        src="colombia-rum.jpg"
+        alt="哥倫比亞聖荷西莊園蘭姆桶發酵">
+
+      <div class="card-body">
+
+        <div class="roast">
+          中淺焙 · 日曬蘭姆桶發酵
+        </div>
+
+        <h3>
+          哥倫比亞<br>
+          聖荷西莊園
+        </h3>
+
+        <p class="flavor">
+          威士忌・黑巧克力・葡萄乾
+        </p>
+
+        <div class="price">
+          NT$800
+          <small>115g / 包</small>
+        </div>
+
+        <div class="price">
+          NT$1,200
+          <small>225g / 包</small>
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- 5 -->
+
+    <article class="card">
+
+      <img
+        src="colombia-apricot.jpg"
+        alt="哥倫比亞酵素水洗卡斯提優杏桃">
+
+      <div class="card-body">
+
+        <div class="roast">
+          中淺焙 · 酵素水洗
+        </div>
+
+        <h3>
+          哥倫比亞 卡斯提優<br>
+          杏桃
+        </h3>
+
+        <p class="flavor">
+          水蜜桃軟糖・乳酸飲・黑巧克力
+        </p>
+
+        <div class="price">
+          NT$800
+          <small>115g / 包</small>
+        </div>
+
+        <div class="price">
+          NT$1,200
+          <small>225g / 包</small>
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- 6 -->
+
+    <article class="card">
+
+      <img
+        src="thinkthough-blend.jpg"
+        alt="思沐配方西達摩瓜地馬拉拼配">
+
+      <div class="card-body">
+
+        <div class="roast">
+          中烘焙 · 配方豆
+        </div>
+
+        <h3>
+          思沐配方<br>
+          西達摩 × 瓜地馬拉
+        </h3>
+
+        <p class="flavor">
+          香檳葡萄・玫瑰花・楓糖
+        </p>
+
+        <div class="price">
+          NT$800
+          <small>225g / 包</small>
+        </div>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ================= DRIP BAG ================= -->
+
+<section class="menu-section" id="drip">
+
+  <div class="section-head">
+
+    <div class="eyebrow">
+      DRIP BAG
+    </div>
+
+    <h2>
+      耳掛咖啡
+    </h2>
+
+    <p>
+      一包一杯，把喜歡的味道帶著走。
+    </p>
+
+  </div>
+
+
+  <div class="grid">
+
+
+    <!-- 7 -->
+
+    <article class="card">
+
+      <img
+        src="selected-blend.jpg"
+        alt="思沐嚴選">
+
+      <div class="card-body">
+
+        <div class="roast">
+          深烘焙 · 配方
+        </div>
+
+        <h3>
+          思沐嚴選
+        </h3>
 
         <p class="flavor">
           哥倫比亞 × 衣索比亞<br>
@@ -769,18 +1007,29 @@ main{
           NT$50
           <small>耳掛 / 包</small>
         </div>
+
       </div>
+
     </article>
 
 
-    <article class="product-card">
-      <div class="product-image">
-        <img src="hazelnut-blend.jpg" alt="榛心誠意">
-      </div>
+    <!-- 8 -->
 
-      <div class="product-body">
-        <div class="product-meta">中烘焙 · 配方</div>
-        <h3>榛心誠意</h3>
+    <article class="card">
+
+      <img
+        src="hazelnut-blend.jpg"
+        alt="榛心誠意">
+
+      <div class="card-body">
+
+        <div class="roast">
+          中烘焙 · 配方
+        </div>
+
+        <h3>
+          榛心誠意
+        </h3>
 
         <p class="flavor">
           哥倫比亞 × 衣索比亞 × 瓜地馬拉<br>
@@ -791,21 +1040,32 @@ main{
           NT$60
           <small>耳掛 / 包</small>
         </div>
+
       </div>
+
     </article>
 
 
-    <article class="product-card">
-      <div class="product-image">
-        <img src="lychee.jpg" alt="荔馬成功">
-      </div>
+    <!-- 9 -->
 
-      <div class="product-body">
-        <div class="product-meta">淺烘焙 · 日曬</div>
-        <h3>荔馬成功</h3>
+    <article class="card">
+
+      <img
+        src="lychee.jpg"
+        alt="荔馬成功">
+
+      <div class="card-body">
+
+        <div class="roast">
+          淺烘焙 · 日曬
+        </div>
+
+        <h3>
+          荔馬成功
+        </h3>
 
         <p class="flavor">
-          衣索比亞 西達馬班莎<br>
+          衣索比亞 日曬 西達馬班莎<br>
           黑色莓果・荔枝・洋甘菊
         </p>
 
@@ -813,115 +1073,141 @@ main{
           NT$70
           <small>耳掛 / 包</small>
         </div>
+
       </div>
+
     </article>
 
+
   </div>
-</section>
-
-
-<section class="order">
-
-  <div class="eyebrow">ORDER ONLINE</div>
-
-  <h2>找到今天想喝的咖啡了嗎？</h2>
-
-  <p>
-    咖啡豆與耳掛皆可於訂購表單中選購。<br>
-    選一支喜歡的味道，帶回自己的日常。
-  </p>
-
-  <a
-    class="primary-button"
-    href="https://docs.google.com/forms/d/e/1FAIpQLSdtI7CM3AC0AYlMohGp62nzlvOET0Jn_DKowrZx0PnB8zKS9g/viewform"
-    target="_blank"
-    rel="noopener">
-    前往訂購 →
-  </a>
 
 </section>
 
 
-<div class="info">
+<!-- ================= ORDER ================= -->
 
-  <div class="info-item">
-    <strong>寄送方式</strong>
+<div class="order-wrap">
+
+  <div class="order-box">
+
+    <div class="eyebrow">
+      ORDER
+    </div>
+
+    <h2>
+      找到今天想喝的咖啡了嗎？
+    </h2>
 
     <p>
+      咖啡豆與耳掛皆可於訂購表單中選購。<br>
+      選一支喜歡的味道，帶回家慢慢喝。
+    </p>
+
+
+    <a
+      class="order-btn"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSdtI7CM3AC0AYlMohGp62nzlvOET0Jn_DKowrZx0PnB8zKS9g/viewform"
+      target="_blank"
+      rel="noopener">
+
+      前往訂購 →
+
+    </a>
+
+
+    <div class="shipping">
+
+      <strong>寄送方式</strong><br>
+
       郵局／7-11／全家店到店<br>
-      運費 NT$80<br>
-      單筆訂單滿 NT$2,000 免運
-    </p>
-  </div>
 
-  <div class="info-item">
-    <strong>付款方式</strong>
+      運費 NT$80，單筆訂單滿 NT$2,000 免運。
 
-    <p>
-      銀行轉帳<br>
-      送出訂單後，請私訊思沐咖啡<br>
-      確認訂單與付款資訊。
-    </p>
+      <br><br>
+
+      <strong>付款方式</strong><br>
+
+      銀行轉帳。送出訂單後，請私訊思沐咖啡確認訂單與付款資訊。
+
+    </div>
+
   </div>
 
 </div>
 
-</main>
 
+<!-- ================= FOOTER ================= -->
 
-<footer class="site-footer">
+<footer>
 
-  <div class="footer-logo">思沐咖啡</div>
+  <div class="footer-name">
+    思沐咖啡
+  </div>
 
   <div class="footer-en">
-    ThinkThough Coffee · TAIPEI
+    ThinkThough Coffee · Taipei
   </div>
 
-  <div class="footer-info">
-
-    <a
-      href="https://www.google.com/maps/search/?api=1&query=108臺北市萬華區錦德里西園路二段281巷27號1樓"
-      target="_blank"
-      rel="noopener">
-      臺北市萬華區西園路二段281巷27號1樓
-    </a>
-
-    <br>
-
-    <a href="tel:0223036787">
-      02 2303 6787
-    </a>
-
+  <div class="footer-address">
+    台北市萬華區西園路二段281巷27號<br>
+    02 2303 6787
   </div>
 
 
-  <div class="social-icons">
+  <div class="socials">
+
 
     <!-- Instagram -->
+
     <a
+      class="instagram"
       href="https://www.instagram.com/thinkthough_coffee/"
       target="_blank"
       rel="noopener"
       aria-label="Instagram">
 
-      <svg class="instagram-icon" viewBox="0 0 24 24">
-        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-        <circle cx="12" cy="12" r="4"></circle>
-        <circle cx="17.5" cy="6.5" r="1"></circle>
+      <svg viewBox="0 0 24 24">
+
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="5">
+        </rect>
+
+        <circle
+          cx="12"
+          cy="12"
+          r="4">
+        </circle>
+
+        <circle
+          cx="17.5"
+          cy="6.5"
+          r="1">
+        </circle>
+
       </svg>
 
     </a>
 
 
     <!-- Facebook -->
+
     <a
+      class="facebook"
       href="https://www.facebook.com/CaffeDearlandMuse/?locale=zh_TW"
       target="_blank"
       rel="noopener"
       aria-label="Facebook">
 
-      <svg class="facebook-icon" viewBox="0 0 24 24">
-        <path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v8h4v-8h3.5l.5-4H13V9c0-.7.3-1 1-1z"></path>
+      <svg viewBox="0 0 24 24">
+
+        <path
+          d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v8h4v-8h3.5l.5-4H13V9c0-.7.3-1 1-1z">
+        </path>
+
       </svg>
 
     </a>
@@ -929,17 +1215,12 @@ main{
   </div>
 
 
-  <div class="footer-nav">
-    <a href="about.html">關於思沐</a>
-    <a href="index.html">本期豆單</a>
-  </div>
-
-
   <div class="copyright">
-    © 2026 ThinkThough Coffee · TAIPEI
+    © 2026 ThinkThough Coffee
   </div>
 
 </footer>
+
 
 </body>
 </html>
