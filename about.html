@@ -3,19 +3,34 @@
 
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
 
 <title>關於思沐｜ThinkThough Coffee</title>
 
+<meta
+  name="description"
+  content="思沐咖啡 ThinkThough Coffee，位於台北南萬華巷弄中的咖啡館。咖啡、植物、老屋與生活，在這裡慢慢發生。"
+>
+
 <style>
 
+/* =========================
+   基本設定
+========================= */
+
 :root{
-  --blue:#063d70;
+  --blue:#17384f;
+  --blue-light:#315b75;
   --cream:#f6f0e5;
   --paper:#fffdf8;
   --text:#17344d;
   --muted:#6d716e;
-  --green:#668f55;
+  --brown:#95633f;
+  --green:#53634d;
   --line:#ded6c8;
 }
 
@@ -31,6 +46,7 @@ body{
   margin:0;
   background:var(--paper);
   color:var(--text);
+
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -39,784 +55,1339 @@ body{
     sans-serif;
 }
 
+img{
+  width:100%;
+  display:block;
+}
+
+a{
+  color:inherit;
+}
+
+
+/* =========================
+   導覽列
+========================= */
+
+.site-nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+
+  height:72px;
+
+  z-index:100;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 6%;
+
+  background:rgba(255,253,248,.94);
+
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+
+  border-bottom:1px solid rgba(222,214,200,.65);
+}
+
+.nav-logo{
+  text-decoration:none;
+  color:var(--blue);
+
+  font-family:"Noto Serif TC",serif;
+
+  font-size:19px;
+  font-weight:800;
+
+  letter-spacing:.08em;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--blue);
+
+  font-size:14px;
+  font-weight:700;
+
+  transition:.2s;
+}
+
+.nav-links a:hover{
+  opacity:.6;
+}
+
+
 /* =========================
    HERO
 ========================= */
 
 .hero{
-  min-height:78vh;
+  min-height:100vh;
+
   position:relative;
-  background:
-    linear-gradient(
-      rgba(10,30,24,.38),
-      rgba(10,30,24,.48)
-    ),
-    url("cafe-front.jpg") center/cover no-repeat;
 
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
 
-  padding:60px 24px;
   text-align:center;
+
   color:white;
+
+  background:
+    linear-gradient(
+      rgba(10,35,52,.45),
+      rgba(10,35,52,.58)
+    ),
+    url("about-store.jpg");
+
+  background-size:cover;
+  background-position:center;
 }
 
 .hero-content{
-  max-width:760px;
+  width:90%;
+  max-width:800px;
+
+  padding-top:60px;
 }
 
-.eyebrow{
+.hero-small{
   font-size:13px;
-  letter-spacing:.30em;
+
+  letter-spacing:.35em;
+
   font-weight:700;
-  margin-bottom:18px;
+
+  opacity:.9;
 }
 
 .hero h1{
+  margin:18px 0 10px;
+
   font-family:"Noto Serif TC",serif;
-  font-size:clamp(46px,8vw,82px);
-  font-weight:500;
-  margin:0;
+
+  font-size:clamp(46px,8vw,88px);
+
+  font-weight:600;
+
+  letter-spacing:.06em;
+}
+
+.hero-en{
+  margin-bottom:28px;
+
+  font-size:15px;
+
+  letter-spacing:.24em;
+
+  opacity:.85;
+}
+
+.hero-line{
+  width:45px;
+  height:1px;
+
+  margin:30px auto;
+
+  background:rgba(255,255,255,.7);
+}
+
+.hero-text{
+  font-family:"Noto Serif TC",serif;
+
+  font-size:clamp(17px,2vw,21px);
+
+  line-height:2;
+
   letter-spacing:.08em;
 }
 
-.hero h2{
-  font-size:clamp(22px,4vw,36px);
-  letter-spacing:.12em;
-  margin:12px 0 26px;
-}
+.scroll-btn{
+  display:inline-block;
 
-.hero p{
-  font-size:17px;
-  line-height:2;
-  margin:0;
-}
+  margin-top:40px;
 
-/* =========================
-   NAV
-========================= */
+  padding:13px 26px;
 
-.nav{
-  position:sticky;
-  top:0;
-  z-index:20;
+  border:1px solid rgba(255,255,255,.75);
 
-  background:rgba(255,253,248,.96);
-  backdrop-filter:blur(10px);
-
-  display:flex;
-  justify-content:center;
-  gap:12px;
-
-  padding:14px 20px;
-  border-bottom:1px solid var(--line);
-}
-
-.nav a{
-  background:var(--blue);
-  color:white;
-  text-decoration:none;
-
-  padding:11px 25px;
   border-radius:999px;
 
-  font-weight:700;
+  text-decoration:none;
+
+  color:white;
+
   font-size:14px;
+
+  transition:.25s;
 }
+
+.scroll-btn:hover{
+  background:white;
+  color:var(--blue);
+}
+
 
 /* =========================
-   INTRO
+   共用區塊
 ========================= */
 
-.intro{
-  max-width:900px;
+.section{
+  padding:110px 7%;
+}
+
+.section-inner{
+  max-width:1180px;
   margin:auto;
-  padding:90px 25px 75px;
-  text-align:center;
 }
 
-.small-title{
-  color:var(--green);
-  font-size:13px;
-  font-weight:800;
-  letter-spacing:.25em;
-}
-
-.intro h2{
-  font-family:"Noto Serif TC",serif;
-  font-size:clamp(31px,5vw,46px);
-  font-weight:500;
-
-  margin:14px 0 28px;
-
-  line-height:1.5;
-}
-
-.intro p{
-  max-width:700px;
-  margin:auto;
-
-  font-size:17px;
-  line-height:2.1;
-
-  color:#545b56;
-}
-
-/* =========================
-   STORY
-========================= */
-
-.story{
-  max-width:1100px;
-  margin:auto;
-
-  padding:20px 25px 100px;
-}
-
-.story-row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:65px;
-
-  align-items:center;
-
-  margin-bottom:110px;
-}
-
-.story-row.reverse .story-image{
-  order:2;
-}
-
-.story-image img{
-  width:100%;
-  height:500px;
-
-  object-fit:cover;
-
-  display:block;
-  border-radius:4px;
-}
-
-.story-text .number{
-  color:var(--green);
+.eyebrow{
+  color:var(--brown);
 
   font-size:12px;
+
   font-weight:800;
-  letter-spacing:.2em;
+
+  letter-spacing:.26em;
+
+  margin-bottom:12px;
 }
 
-.story-text h2{
-  font-family:"Noto Serif TC",serif;
+.section-heading{
+  margin:0 0 30px;
 
   color:var(--blue);
 
-  font-size:32px;
-  font-weight:500;
-
-  margin:12px 0 22px;
-}
-
-.story p{
-  font-size:16px;
-  line-height:2;
-  color:#5e625f;
-
-  /* 內文左右對齊 */
-  text-align:justify;
-  text-justify:inter-ideograph;
-
-  /* 中文排版 */
-  letter-spacing:.04em;
-}
-  @media(max-width:560px){
-  .story p{
-    text-align:justify;
-    text-justify:inter-ideograph;
-    letter-spacing:.02em;
-    line-height:2;
-  }
-}
-
-/* =========================
-   PHOTO
-========================= */
-
-.full-photo{
-  max-width:1180px;
-  margin:0 auto 100px;
-  padding:0 25px;
-}
-
-.full-photo img{
-  width:100%;
-  height:580px;
-
-  object-fit:cover;
-
-  display:block;
-}
-
-/* =========================
-   GALLERY
-========================= */
-
-.gallery{
-  max-width:1100px;
-
-  margin:auto;
-  padding:0 25px 110px;
-}
-
-.gallery-title{
-  text-align:center;
-  margin-bottom:35px;
-}
-
-.gallery-title span{
-  color:var(--green);
-
-  font-size:12px;
-  font-weight:800;
-
-  letter-spacing:.25em;
-}
-
-.gallery-title h2{
   font-family:"Noto Serif TC",serif;
 
-  font-size:34px;
-  font-weight:500;
+  font-size:clamp(30px,4vw,46px);
 
-  margin:10px 0;
+  font-weight:600;
+
+  line-height:1.4;
 }
 
-.gallery-grid{
+.body-text{
+  color:#5f6562;
+
+  font-size:16px;
+
+  line-height:2.15;
+
+  letter-spacing:.04em;
+
+  text-align:justify;
+  text-justify:inter-ideograph;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid{
   display:grid;
+
   grid-template-columns:1fr 1fr;
-  gap:18px;
+
+  gap:85px;
+
+  align-items:center;
 }
 
-.gallery-grid img{
-  width:100%;
-  height:390px;
+.about-photo{
+  overflow:hidden;
+}
+
+.about-photo img{
+  aspect-ratio:4/5;
 
   object-fit:cover;
-
-  display:block;
 }
+
+
+/* =========================
+   SPACE
+========================= */
+
+.space{
+  background:var(--cream);
+}
+
+.space-intro{
+  max-width:720px;
+
+  margin:0 auto 65px;
+
+  text-align:center;
+}
+
+.space-intro .body-text{
+  text-align:justify;
+}
+
+.space-gallery{
+  display:grid;
+
+  grid-template-columns:1.3fr .7fr;
+
+  gap:20px;
+
+  align-items:stretch;
+}
+
+.space-main img{
+  height:100%;
+  min-height:550px;
+
+  object-fit:cover;
+}
+
+.space-side{
+  display:grid;
+
+  grid-template-rows:1fr 1fr;
+
+  gap:20px;
+}
+
+.space-side img{
+  height:100%;
+
+  min-height:265px;
+
+  object-fit:cover;
+}
+
+
+/* =========================
+   COFFEE
+========================= */
+
+.feature-grid{
+  display:grid;
+
+  grid-template-columns:1.05fr .95fr;
+
+  gap:85px;
+
+  align-items:center;
+}
+
+.feature-grid.reverse{
+  grid-template-columns:.95fr 1.05fr;
+}
+
+.feature-photo img{
+  aspect-ratio:4/5;
+
+  object-fit:cover;
+}
+
+.feature-copy{
+  max-width:500px;
+}
+
+.button{
+  display:inline-block;
+
+  margin-top:25px;
+
+  padding:15px 28px;
+
+  border-radius:999px;
+
+  background:var(--blue);
+
+  color:white;
+
+  text-decoration:none;
+
+  font-weight:800;
+
+  font-size:14px;
+
+  letter-spacing:.04em;
+
+  transition:.25s;
+}
+
+.button:hover{
+  transform:translateY(-2px);
+
+  background:#244d68;
+}
+
+
+/* =========================
+   SIGNATURE
+========================= */
+
+.signature{
+  background:#f3eee5;
+}
+
+.signature-note{
+  margin-top:26px;
+
+  color:var(--brown);
+
+  font-size:12px;
+
+  font-weight:800;
+
+  line-height:1.8;
+
+  letter-spacing:.10em;
+}
+
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote{
+  min-height:70vh;
+
+  position:relative;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:80px 25px;
+
+  text-align:center;
+
+  color:white;
+
+  background:
+    linear-gradient(
+      rgba(14,43,57,.52),
+      rgba(14,43,57,.62)
+    ),
+    url("about-coffee.jpg");
+
+  background-size:cover;
+  background-position:center;
+}
+
+.quote p{
+  margin:0;
+
+  font-family:"Noto Serif TC",serif;
+
+  font-size:clamp(27px,5vw,48px);
+
+  line-height:1.8;
+
+  letter-spacing:.08em;
+
+  text-shadow:0 2px 15px rgba(0,0,0,.15);
+}
+
 
 /* =========================
    VISIT
 ========================= */
 
 .visit{
-  background:var(--cream);
+  background:var(--blue);
 
-  padding:75px 25px;
+  color:white;
 
   text-align:center;
 }
 
-.visit h2{
-  color:var(--blue);
+.visit .eyebrow{
+  color:#d8b998;
+}
+
+.visit .section-heading{
+  color:white;
+}
+
+.visit-lead{
+  margin:0 0 45px;
 
   font-family:"Noto Serif TC",serif;
 
-  font-size:34px;
-  font-weight:500;
-
-  margin:0 0 20px;
-}
-
-.visit p{
-  color:#59605c;
+  font-size:20px;
 
   line-height:2;
-
-  margin:0;
 }
 
-.map-btn{
-  display:inline-block;
-
-  margin-top:28px;
-
-  background:var(--blue);
-  color:white;
-
-  text-decoration:none;
-
-  padding:14px 30px;
-
-  border-radius:999px;
-
-  font-weight:700;
+.visit-brand{
+  margin-bottom:30px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+.visit-brand strong{
+  display:block;
 
-footer{
-  background:var(--blue);
-  color:white;
+  margin-bottom:8px;
 
-  text-align:center;
-
-  padding:60px 25px 45px;
-}
-
-footer h3{
   font-family:"Noto Serif TC",serif;
 
-  font-size:25px;
-  font-weight:500;
+  font-size:28px;
 
-  margin:0 0 10px;
+  letter-spacing:.08em;
 }
 
-footer p{
-  opacity:.85;
+.visit-brand span{
+  font-size:13px;
 
-  line-height:1.9;
+  letter-spacing:.20em;
 
-  margin:5px 0;
+  opacity:.75;
 }
 
-.social{
+.visit-info{
+  line-height:2.1;
+
+  font-size:14px;
+
+  opacity:.9;
+}
+
+.visit-info a{
+  color:white;
+  text-decoration:none;
+}
+
+.visit-info a:hover{
+  text-decoration:underline;
+}
+
+.visit-buttons{
   display:flex;
 
   justify-content:center;
 
-  gap:15px;
+  flex-wrap:wrap;
 
-  margin-top:25px;
+  gap:12px;
+
+  margin-top:32px;
 }
 
-.social a{
+.visit-button{
+  display:inline-block;
+
+  min-width:145px;
+
+  padding:13px 23px;
+
+  border:1px solid rgba(255,255,255,.65);
+
+  border-radius:999px;
+
+  color:white;
+
+  text-decoration:none;
+
+  font-size:14px;
+
+  font-weight:700;
+
+  transition:.2s;
+}
+
+.visit-button:hover{
+  background:white;
+  color:var(--blue);
+}
+
+
+/* =========================
+   SOCIAL ICON
+========================= */
+
+.social-icons{
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:14px;
+
+  margin-top:35px;
+}
+
+.social-icons a{
   width:44px;
   height:44px;
 
-  border:1px solid rgba(255,255,255,.55);
+  border:1px solid rgba(255,255,255,.5);
 
   border-radius:50%;
 
   display:flex;
 
-  justify-content:center;
   align-items:center;
+  justify-content:center;
 
   color:white;
+
+  transition:.2s;
 }
 
-.social svg{
-  width:21px;
-  height:21px;
+.social-icons a:hover{
+  background:white;
+  color:var(--blue);
+
+  transform:translateY(-2px);
+}
+
+.social-icons svg{
+  width:20px;
+  height:20px;
+
+  fill:none;
 
   stroke:currentColor;
-  fill:none;
 
   stroke-width:1.8;
 }
 
-.social .facebook svg{
-  fill:currentColor;
-  stroke:none;
-}
 
-.copy{
-  margin-top:30px;
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+  padding:25px;
+
+  text-align:center;
+
+  background:var(--blue);
+
+  color:rgba(255,255,255,.55);
+
+  border-top:1px solid rgba(255,255,255,.12);
 
   font-size:12px;
 
-  opacity:.6;
+  letter-spacing:.08em;
 }
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:900px){
+
+  .about-grid,
+  .feature-grid,
+  .feature-grid.reverse{
+    grid-template-columns:1fr;
+
+    gap:45px;
+  }
+
+  .feature-grid.reverse .feature-photo{
+    order:1;
+  }
+
+  .feature-grid.reverse .feature-copy{
+    order:2;
+  }
+
+  .space-gallery{
+    grid-template-columns:1fr;
+  }
+
+  .space-side{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto;
+  }
+
+  .space-main img{
+    min-height:450px;
+  }
+
+  .space-side img{
+    min-height:280px;
+  }
+}
+
 
 /* =========================
    MOBILE
 ========================= */
 
-@media(max-width:750px){
+@media(max-width:650px){
+
+  .site-nav{
+    height:62px;
+
+    padding:0 18px;
+  }
+
+  .nav-logo{
+    font-size:16px;
+  }
+
+  .nav-links{
+    gap:14px;
+  }
+
+  .nav-links a{
+    font-size:12px;
+  }
+
+  .nav-links a:first-child{
+    display:none;
+  }
 
   .hero{
-    min-height:68vh;
+    min-height:88vh;
+
+    background-position:center;
   }
 
-  .story-row{
+  .hero-content{
+    padding-top:40px;
+  }
+
+  .hero-small{
+    font-size:10px;
+
+    letter-spacing:.25em;
+  }
+
+  .hero-en{
+    font-size:12px;
+
+    letter-spacing:.16em;
+  }
+
+  .hero-text{
+    font-size:16px;
+  }
+
+  .section{
+    padding:75px 22px;
+  }
+
+  .section-heading{
+    margin-bottom:22px;
+  }
+
+  .body-text{
+    font-size:15px;
+
+    line-height:2.05;
+
+    letter-spacing:.02em;
+
+    text-align:justify;
+
+    text-justify:inter-ideograph;
+  }
+
+  .about-grid,
+  .feature-grid,
+  .feature-grid.reverse{
+    gap:32px;
+  }
+
+  .about-photo img,
+  .feature-photo img{
+    aspect-ratio:4/5;
+  }
+
+  .space-intro{
+    margin-bottom:40px;
+  }
+
+  .space-main img{
+    min-height:340px;
+  }
+
+  .space-side{
     grid-template-columns:1fr;
-    gap:28px;
 
-    margin-bottom:75px;
+    gap:14px;
   }
 
-  .story-row.reverse .story-image{
-    order:0;
+  .space-side img{
+    min-height:250px;
   }
 
-  .story-image img{
-    height:360px;
+  .quote{
+    min-height:55vh;
   }
 
-  .full-photo img{
-    height:400px;
+  .visit-buttons{
+    flex-direction:column;
+
+    align-items:center;
   }
 
-  .gallery-grid{
-    grid-template-columns:1fr;
+  .visit-button{
+    width:210px;
   }
 
-  .gallery-grid img{
-    height:330px;
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media(max-width:420px){
+
+  .nav-links{
+    gap:10px;
   }
 
-  .nav{
-    gap:8px;
+  .nav-links a{
+    font-size:11px;
   }
 
-  .nav a{
-    padding:10px 18px;
-    font-size:13px;
+  .hero h1{
+    font-size:46px;
   }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- ================= HERO ================= -->
+<!-- =========================
+     導覽列
+========================= -->
+
+<nav class="site-nav">
+
+  <a class="nav-logo" href="index.html">
+    思沐咖啡
+  </a>
+
+  <div class="nav-links">
+
+    <a href="#about">
+      關於思沐
+    </a>
+
+    <a href="index.html">
+      本期豆單
+    </a>
+
+    <a
+      href="https://www.instagram.com/thinkthough_coffee/"
+      target="_blank"
+      rel="noopener"
+    >
+      Instagram
+    </a>
+
+  </div>
+
+</nav>
+
+
+
+<!-- =========================
+     1. HERO
+========================= -->
 
 <header class="hero">
 
   <div class="hero-content">
 
-    <div class="eyebrow">
+    <div class="hero-small">
       THINKTHOUGH COFFEE · TAIPEI
     </div>
 
-    <h1>思沐咖啡</h1>
+    <h1>
+      思沐咖啡
+    </h1>
 
-    <h2>ThinkThough Coffee</h2>
+    <div class="hero-en">
+      COFFEE · PLANTS · LIFE
+    </div>
 
-    <p>
-      藏在南萬華巷弄裡的一間咖啡館
-    </p>
+    <div class="hero-line"></div>
+
+    <div class="hero-text">
+      在南萬華，<br>
+      留一個讓生活慢下來的地方。
+    </div>
+
+    <a
+      class="scroll-btn"
+      href="#about"
+    >
+      認識思沐 ↓
+    </a>
 
   </div>
 
 </header>
 
 
-<!-- ================= NAV ================= -->
 
-<nav class="nav">
+<!-- =========================
+     2. ABOUT
+========================= -->
 
-  <a href="index.html">
-    本期豆單
-  </a>
+<section
+  class="section"
+  id="about"
+>
 
-  <a href="#about">
-    關於思沐
-  </a>
+  <div class="section-inner">
 
-  <a href="#visit">
-    找到我們
-  </a>
+    <div class="about-grid">
 
-</nav>
+      <div class="about-photo">
+
+        <img
+          src="about-garden.jpg"
+          alt="思沐咖啡戶外植物空間"
+        >
+
+      </div>
 
 
-<!-- ================= INTRO ================= -->
+      <div>
 
-<section class="intro" id="about">
+        <div class="eyebrow">
+          ABOUT THINKTHOUGH
+        </div>
 
-  <div class="small-title">
-    ABOUT THINKTHOUGH
+        <h2 class="section-heading">
+          關於思沐
+        </h2>
+
+        <div class="body-text">
+
+          <p>
+            思沐咖啡座落在南萬華的巷弄中，
+            將咖啡、植物與生活揉進一座老屋空間。
+          </p>
+
+          <p>
+            沒有城市中心的匆忙，我們希望每一位走進來的人，
+            都能在一杯咖啡的時間裡，慢下來感受萬華的日常。
+          </p>
+
+          <p>
+            在這裡，喝咖啡不需要太多理由。
+            找一個喜歡的位置，看看植物、曬曬陽光，
+            或只是安靜地坐一會，也很好。
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
-
-  <h2>
-    藏在南萬華巷弄裡<br>
-    的一間咖啡館
-  </h2>
-
-  <p>
-    思沐咖啡座落在南萬華的巷弄中，
-    將咖啡、植物與生活揉進一座老屋空間。
-    沒有城市中心的匆忙，希望每一位走進來的人，
-    都能在一杯咖啡的時間裡，
-    慢下來感受萬華的日常。
-  </p>
 
 </section>
 
 
-<!-- ================= STORY ================= -->
 
-<section class="story">
+<!-- =========================
+     3. SPACE
+========================= -->
+
+<section class="section space">
+
+  <div class="section-inner">
 
 
-  <!-- 01 -->
+    <div class="space-intro">
 
-  <div class="story-row">
-
-    <div class="story-image">
-
-      <img
-        src="cafe-interior.jpg"
-        alt="思沐咖啡室內空間">
-
-    </div>
-
-    <div class="story-text">
-
-      <div class="number">
-        01 · SPACE
+      <div class="eyebrow">
+        THE SPACE
       </div>
 
-      <h2>
-        植物與老屋，一起生活
+      <h2 class="section-heading">
+        一間會隨時間改變的咖啡館
       </h2>
 
-      <p>
+      <div class="body-text">
+
+        木頭、植物、陽光與老屋。
         木質桌椅、老屋留下的痕跡與滿室綠意，
         構成思沐最自然的樣子。
         光線隨著時間走進店裡，
         也讓每個座位都有不同的風景。
-      </p>
 
-    </div>
-
-  </div>
-
-
-  <!-- 02 -->
-
-  <div class="story-row reverse">
-
-    <div class="story-image">
-
-      <img
-        src="cafe-pourover.jpg"
-        alt="思沐咖啡手沖咖啡">
-
-    </div>
-
-    <div class="story-text">
-
-      <div class="number">
-        02 · COFFEE
       </div>
 
-      <h2>
-        認真沖好，每一杯咖啡
-      </h2>
-
-      <p>
-        從選豆到沖煮，
-        希望保留每支咖啡原本的個性。
-
-        不同產區、處理法與風味，
-        在手沖之間慢慢展開，
-        讓喝咖啡成為認識風味的一種方式。
-      </p>
-
     </div>
 
-  </div>
 
+    <div class="space-gallery">
 
-  <!-- 03 -->
+      <div class="space-main">
 
-  <div class="story-row">
+        <img
+          src="about-interior.jpg"
+          alt="思沐咖啡室內空間"
+        >
 
-    <div class="story-image">
-
-      <img
-        src="cafe-waffle.jpg"
-        alt="思沐咖啡招牌麻糬鬆餅">
-
-    </div>
-
-    <div class="story-text">
-
-      <div class="number">
-        03 · SWEETS
       </div>
 
-      <h2>
-        咖啡之外，也留一點甜
-      </h2>
 
-      <p>
-        招牌麻糬鬆餅堅持不加一滴水，
-        以法國發酵奶油、小農鮮奶製作。
+      <div class="space-side">
 
-        外層烤得微酥，
-        裡頭柔軟帶著濃郁乳香，
-        搭配咖啡，
-        就是思沐最舒服的午後日常。
-      </p>
+        <img
+          src="about-garden.jpg"
+          alt="思沐咖啡植物空間"
+        >
+
+        <img
+          src="about-coffee.jpg"
+          alt="思沐咖啡戶外咖啡時光"
+        >
+
+      </div>
 
     </div>
 
   </div>
-
 
 </section>
 
 
-<!-- ================= LARGE PHOTO ================= -->
 
-<div class="full-photo">
+<!-- =========================
+     4. OUR COFFEE
+========================= -->
 
-  <img
-    src="cafe-coffee.jpg"
-    alt="思沐咖啡窗邊">
+<section class="section">
 
-</div>
+  <div class="section-inner">
+
+    <div class="feature-grid">
+
+      <div class="feature-photo">
+
+        <img
+          src="about-pourover.jpg"
+          alt="思沐咖啡手沖咖啡"
+        >
+
+      </div>
 
 
-<!-- ================= GALLERY ================= -->
+      <div class="feature-copy">
 
-<section class="gallery">
+        <div class="eyebrow">
+          OUR COFFEE
+        </div>
 
-  <div class="gallery-title">
+        <h2 class="section-heading">
+          從一顆豆子，<br>
+          到你手中的一杯咖啡。
+        </h2>
 
-    <span>
-      A LITTLE SLOWER
-    </span>
+        <div class="body-text">
 
-    <h2>
-      留一點時間給自己
+          <p>
+            從選豆到沖煮，我們希望保留每支咖啡原本的個性。
+            不同產區、處理法與風味，在手沖之間慢慢展開，
+            也讓喝咖啡成為認識風味的一種方式。
+          </p>
+
+          <p>
+            有時明亮、有時醇厚，
+            每一支豆子都有自己的樣子。
+            挑一杯適合今天的咖啡，慢慢喝就好。
+          </p>
+
+        </div>
+
+
+        <a
+          class="button"
+          href="index.html#coffee"
+        >
+          查看本期豆單 →
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     5. SIGNATURE
+========================= -->
+
+<section class="section signature">
+
+  <div class="section-inner">
+
+    <div class="feature-grid reverse">
+
+
+      <div class="feature-copy">
+
+        <div class="eyebrow">
+          SIGNATURE
+        </div>
+
+        <h2 class="section-heading">
+          不加一滴水，<br>
+          留下最單純的奶香。
+        </h2>
+
+        <div class="body-text">
+
+          <p>
+            招牌麻糬鬆餅堅持不加一滴水，
+            以法國發酵奶油、小農鮮奶製作。
+          </p>
+
+          <p>
+            外層烤得微酥，裡頭柔軟，
+            帶著濃郁乳香。
+            搭配一杯咖啡，
+            就是思沐最舒服的午後日常。
+          </p>
+
+        </div>
+
+
+        <div class="signature-note">
+          FRENCH CULTURED BUTTER<br>
+          LOCAL FRESH MILK · NO ADDED WATER
+        </div>
+
+      </div>
+
+
+      <div class="feature-photo">
+
+        <img
+          src="about-waffle.jpg"
+          alt="思沐咖啡麻糬鬆餅"
+        >
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     BRAND QUOTE
+========================= -->
+
+<section class="quote">
+
+  <p>
+    咖啡會喝完，<br>
+    但希望你記得<br>
+    在思沐度過的時間。
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     6. VISIT
+========================= -->
+
+<section class="section visit">
+
+  <div class="section-inner">
+
+    <div class="eyebrow">
+      VISIT US
+    </div>
+
+    <h2 class="section-heading">
+      來思沐坐坐
     </h2>
 
-  </div>
+    <p class="visit-lead">
+      有空的午後，來喝杯咖啡吧。
+    </p>
 
 
-  <div class="gallery-grid">
+    <div class="visit-brand">
 
-    <img
-      src="cafe-garden.jpg"
-      alt="思沐咖啡植物空間">
+      <strong>
+        思沐咖啡
+      </strong>
 
-    <img
-      src="cafe-front.jpg"
-      alt="思沐咖啡店面">
+      <span>
+        THINKTHOUGH COFFEE · TAIPEI
+      </span>
+
+    </div>
+
+
+    <div class="visit-info">
+
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=108臺北市萬華區錦德里西園路二段281巷27號1樓"
+        target="_blank"
+        rel="noopener"
+      >
+        108 臺北市萬華區<br>
+        西園路二段281巷27號1樓
+      </a>
+
+      <br>
+
+      <a href="tel:0223036787">
+        02 2303 6787
+      </a>
+
+      <br>
+
+      @thinkthough_coffee
+
+    </div>
+
+
+    <div class="visit-buttons">
+
+      <a
+        class="visit-button"
+        href="https://www.instagram.com/thinkthough_coffee/"
+        target="_blank"
+        rel="noopener"
+      >
+        Instagram
+      </a>
+
+
+      <a
+        class="visit-button"
+        href="https://www.google.com/maps/search/?api=1&query=108臺北市萬華區錦德里西園路二段281巷27號1樓"
+        target="_blank"
+        rel="noopener"
+      >
+        Google Maps
+      </a>
+
+
+      <a
+        class="visit-button"
+        href="index.html"
+      >
+        本期豆單
+      </a>
+
+    </div>
+
+
+
+    <div class="social-icons">
+
+
+      <!-- Instagram -->
+
+      <a
+        href="https://www.instagram.com/thinkthough_coffee/"
+        target="_blank"
+        rel="noopener"
+        aria-label="Instagram"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+
+          <rect
+            x="3"
+            y="3"
+            width="18"
+            height="18"
+            rx="5"
+          ></rect>
+
+          <circle
+            cx="12"
+            cy="12"
+            r="4"
+          ></circle>
+
+          <circle
+            cx="17.5"
+            cy="6.5"
+            r="1"
+          ></circle>
+
+        </svg>
+
+      </a>
+
+
+      <!-- Facebook -->
+
+      <a
+        href="https://www.facebook.com/CaffeDearlandMuse/?locale=zh_TW"
+        target="_blank"
+        rel="noopener"
+        aria-label="Facebook"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          style="fill:currentColor;stroke:none;"
+        >
+
+          <path
+            d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v8h4v-8h3.5l.5-4H13V9c0-.7.3-1 1-1z"
+          ></path>
+
+        </svg>
+
+      </a>
+
+
+    </div>
 
   </div>
 
 </section>
 
 
-<!-- ================= VISIT ================= -->
 
-<section class="visit" id="visit">
+<footer class="footer">
 
-  <h2>
-    來思沐坐坐
-  </h2>
-
-  <p>
-    108 臺北市萬華區錦德里<br>
-    西園路二段281巷27號1樓
-    <br><br>
-    02 2303 6787
-  </p>
-
-  <a
-    class="map-btn"
-    href="https://www.google.com/maps/search/?api=1&query=108臺北市萬華區錦德里西園路二段281巷27號1樓"
-    target="_blank"
-    rel="noopener">
-    查看地圖
-  </a>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-  <h3>
-    思沐咖啡
-  </h3>
-
-  <p>
-    ThinkThough Coffee · Taipei
-  </p>
-
-  <p>
-    一杯咖啡，留一點時間給自己。
-  </p>
-
-
-  <div class="social">
-
-    <!-- Instagram -->
-
-    <a
-      href="https://www.instagram.com/thinkthough_coffee/"
-      target="_blank"
-      rel="noopener"
-      aria-label="Instagram">
-
-      <svg viewBox="0 0 24 24">
-
-        <rect
-          x="3"
-          y="3"
-          width="18"
-          height="18"
-          rx="5">
-        </rect>
-
-        <circle
-          cx="12"
-          cy="12"
-          r="4">
-        </circle>
-
-        <circle
-          cx="17.5"
-          cy="6.5"
-          r="1">
-        </circle>
-
-      </svg>
-
-    </a>
-
-
-    <!-- Facebook -->
-
-    <a
-      class="facebook"
-      href="https://www.facebook.com/CaffeDearlandMuse/?locale=zh_TW"
-      target="_blank"
-      rel="noopener"
-      aria-label="Facebook">
-
-      <svg viewBox="0 0 24 24">
-
-        <path
-          d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v8h4v-8h3.5l.5-4H13V9c0-.7.3-1 1-1z">
-        </path>
-
-      </svg>
-
-    </a>
-
-  </div>
-
-
-  <div class="copy">
-    © 2026 ThinkThough Coffee
-  </div>
+  © 2026 ThinkThough Coffee · Taipei
 
 </footer>
 
