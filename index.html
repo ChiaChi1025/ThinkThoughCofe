@@ -124,51 +124,48 @@ body{
    HERO
 ========================= */
 
-.menu-hero{
-  max-width:1200px;
-  margin:auto;
+./* =========================
+   HERO
+========================= */
 
-  padding:105px 28px 85px;
+.menu-hero{
+  max-width:none;
+  margin:0;
+
+  min-height:520px;
+  padding:105px max(28px, calc((100vw - 1144px) / 2));
 
   display:grid;
   grid-template-columns:1fr .7fr;
-
   gap:60px;
-  align-items:end;
+  align-items:center;
+
+  background:#173f5f;
+  color:#fff;
 }
 
 .menu-label{
-  color:var(--brown);
-
+  color:#d6b894;
   font-size:12px;
   letter-spacing:.28em;
-
   font-weight:800;
-
   margin-bottom:22px;
 }
 
 .menu-hero h1{
   font-family:"Noto Serif TC",serif;
-
   font-size:clamp(50px,7vw,82px);
-
   font-weight:600;
-
   line-height:1.2;
-
   margin:0;
-
   letter-spacing:.04em;
+  color:#fff;
 }
 
 .menu-intro{
-  color:var(--muted);
-
+  color:rgba(255,255,255,.78);
   line-height:2;
-
   font-size:15px;
-
   padding-bottom:8px;
 }
 
@@ -690,12 +687,9 @@ footer{
 
   </div>
 
-
   <div class="menu-intro">
-
-    給時間按下暫停鍵<br>
-    一杯咖啡、一個角落、足夠裝下獨處的暇意。
-
+    給時間按下暫停鍵。<br>
+    一杯咖啡、一個角落，足夠裝下獨處的暇意。
   </div>
 
 </section>
