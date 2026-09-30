@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>思沐咖啡｜ThinkThough Coffee</title>
+
+<meta name="description" content="思沐咖啡 ThinkThough Coffee｜咖啡豆與耳掛咖啡豆單">
+<meta name="theme-color" content="#17384f">
+
+<style>
+:root {
+  --blue: #17384f;
+  --blue-light: #315b75;
+  --cream: #f6f0e5;
+  --paper: #fffdf8;
+  --text: #17384f;
+  --muted: #6d716e;
+  --line: #ded6c8;
+  --brown: #95633f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Noto Sans TC",
+    "PingFang TC",
+    "Microsoft JhengHei",
+    sans-serif;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 72vh;
+  padding: 90px 24px 100px;
+  background:
+    linear-gradient(
+      135deg,
+      #17384f 0%,
+      #315b75 100%
+    );
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 900px;
+}
+
+.mark {
+  font-size: 13px;
+  letter-spacing: .28em;
+  color: rgba(255,255,255,.78);
+  font-weight: 600;
+}
+
+.hero h1 {
+  font-family:
+    "Noto Serif TC",
+    "Songti TC",
+    serif;
+
+  font-size: clamp(52px, 8vw, 86px);
+  font-weight: 600;
+
+  margin: 18px 0 22px;
+  letter-spacing: .05em;
+}
+
+.hero p {
+  max-width: 760px;
+  margin: auto;
+
+  font-size: 17px;
+  line-height: 1.9;
+
+  color: rgba(255,255,255,.84);
+}
+
+.hero-btn {
+  display: inline-block;
+
+  margin-top: 34px;
+
+  background: var(--cream);
+  color: var(--blue);
+
+  text-decoration: none;
+
+  padding: 15px 31px;
+
+  border-radius: 999px;
+
+  font-weight: 800;
+  font-size: 17px;
+
+  transition: .2s;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  background: white;
+}
+
+
+/* =========================
+   CATEGORY NAV
+========================= */
+
+.category-section {
+  background: var(--paper);
+  padding: 58px 20px 45px;
+}
+
+.category-title {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.category-title small {
+  display: block;
+
+  color: var(--brown);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: .22em;
+
+  margin-bottom: 8px;
+}
+
+.category-title h2 {
+  margin: 0;
+
+  font-size: 30px;
+  letter-spacing: .06em;
+}
+
+.category-buttons {
+  max-width: 700px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+}
+
+.category-button {
+  min-height: 105px;
+
+  border: 1px solid var(--blue);
+  border-radius: 6px;
+
+  text-decoration: none;
+
+  color: var(--blue);
+  background: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: .2s;
+}
+
+.category-button:hover {
+  background: var(--blue);
+  color: white;
+
+  transform: translateY(-3px);
+}
+
+.category-button strong {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.category-button span {
+  font-size: 12px;
+  letter-spacing: .12em;
+  opacity: .7;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+  max-width: 1180px;
+  margin: auto;
+  padding: 20px 22px 100px;
+}
+
+.product-section {
+  scroll-margin-top: 30px;
+
+  margin-top: 65px;
+}
+
+.section-title {
+  text-align: center;
+
+  margin-bottom: 34px;
+}
+
+.section-title small {
+  display: block;
+
+  font-size: 12px;
+  letter-spacing: .22em;
+
+  color: var(--brown);
+
+  font-weight: 800;
+}
+
+.section-title h2 {
+  margin: 7px 0 5px;
+
+  font-size: 34px;
+}
+
+.section-title p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   PRODUCT CARDS
+========================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 22px;
+}
+
+.card {
+  background: white;
+
+  border: 1px solid var(--line);
+  border-radius: 6px;
+
+  overflow: hidden;
+
+  transition: .2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(23,56,79,.08);
+}
+
+.card-body {
+  padding: 24px;
+}
+
+.roast {
+  font-size: 12px;
+
+  color: var(--brown);
+
+  letter-spacing: .1em;
+
+  font-weight: 800;
+
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin: 0 0 13px;
+
+  font-size: 19px;
+
+  line-height: 1.55;
+}
+
+.flavor-label {
+  font-size: 12px;
+
+  color: var(--muted);
+
+  margin-bottom: 4px;
+}
+
+.flavor {
+  line-height: 1.8;
+
+  margin: 0 0 17px;
+
+  font-size: 14px;
+}
+
+.price {
+  border-top: 1px solid #eee8de;
+
+  padding-top: 14px;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+
+/* =========================
+   ORDER BUTTON
+========================= */
+
+.order-area {
+  text-align: center;
+
+  margin: 75px 0 30px;
+
+  padding: 55px 25px;
+
+  background: var(--cream);
+}
+
+.order-area small {
+  color: var(--brown);
+
+  font-weight: 800;
+
+  letter-spacing: .2em;
+}
+
+.order-area h2 {
+  font-size: 30px;
+
+  margin: 10px 0;
+}
+
+.order-area p {
+  color: var(--muted);
+
+  line-height: 1.8;
+}
+
+.order-btn {
+  display: inline-block;
+
+  margin-top: 18px;
+
+  padding: 16px 32px;
+
+  border-radius: 999px;
+
+  background: var(--blue);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 20px rgba(23,56,79,.16);
+
+  transition: .2s;
+}
+
+.order-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 26px rgba(23,56,79,.22);
+}
+
+
+/* =========================
+   SHIPPING
+========================= */
+
+.info-box {
+  max-width: 1050px;
+
+  margin: 50px auto 0;
+
+  padding: 38px;
+
+  border: 1px solid var(--line);
+
+  background: white;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 35px;
+}
+
+.info-box h3 {
+  margin: 0 0 10px;
+
+  font-size: 17px;
+}
+
+.info-box p {
+  margin: 0;
+
+  color: var(--muted);
+
+  line-height: 1.8;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  background: var(--blue);
+
+  color: white;
+
+  text-align: center;
+
+  padding: 52px 20px;
+}
+
+footer strong {
+  display: block;
+
+  font-family:
+    "Noto Serif TC",
+    serif;
+
+  font-size: 25px;
+
+  margin-bottom: 17px;
+}
+
+.contact {
+  font-size: 14px;
+
+  line-height: 2;
+
+  opacity: .9;
+
+  margin-bottom: 22px;
+}
+
+.contact a {
+  color: white;
+  text-decoration: none;
+}
+
+.socials {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 14px;
+}
+
+.social {
+  width: 46px;
+  height: 46px;
+
+  border: 1px solid
+    rgba(255,255,255,.55);
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  text-decoration: none;
+
+  transition: .2s;
+}
+
+.social:hover {
+  background: white;
+
+  color: var(--blue);
+
+  transform: translateY(-2px);
+}
+
+.social svg {
+  width: 21px;
+  height: 21px;
+
+  fill: currentColor;
+}
+
+.copyright {
+  margin-top: 25px;
+
+  font-size: 11px;
+
+  opacity: .55;
+
+  letter-spacing: .1em;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+  .grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .info-box {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 560px) {
+
+  .hero {
+    min-height: 68vh;
+
+    padding:
+      65px 20px 65px;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .category-buttons {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .category-button {
+    min-height: 95px;
+  }
+
+  main {
+    padding:
+      10px 17px 70px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-section {
+    margin-top: 55px;
+  }
+
+  .info-box {
+    padding: 27px;
+  }
+
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+  <div class="hero-inner">
+
+    <div class="mark">
+      THINKTHOUGH COFFEE · TAIPEI
+    </div>
+
+    <h1>思沐咖啡</h1>
+
+    <p>
+      從日常的一杯開始，挑一支適合今天的咖啡。<br>
+      單品、配方與耳掛，簡單選、慢慢喝。
+    </p>
+
+    <a
+      class="hero-btn"
+      href="#categories">
+      開始選豆
+    </a>
+
+  </div>
+
+</header>
+
+
+
+<!-- CATEGORY -->
+
+<section
+  class="category-section"
+  id="categories">
+
+  <div class="category-title">
+
+    <small>COFFEE MENU</small>
+
+    <h2>今天想喝哪一種？</h2>
+
+  </div>
+
+
+  <div class="category-buttons">
+
+    <a
+      class="category-button"
+      href="#coffee">
+
+      <strong>咖啡豆</strong>
+
+      <span>COFFEE BEANS</span>
+
+    </a>
+
+
+    <a
+      class="category-button"
+      href="#drip">
+
+      <strong>耳掛咖啡</strong>
+
+      <span>DRIP COFFEE</span>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<main>
+
+
+<!-- =========================
+     咖啡豆
+========================= -->
+
+<section
+  id="coffee"
+  class="product-section">
+
+  <div class="section-title">
+
+    <small>COFFEE BEANS</small>
+
+    <h2>咖啡豆</h2>
+
+    <p>
+      單品與配方豆，依照今天想喝的風味慢慢挑。
+    </p>
+
+  </div>
+
+
+  <div class="grid">
+
+
+    <article class="card">
+
+      <div class="card-body">
+
+        <div class="roast">
+          中淺焙
+        </div>
+
+        <h3>
+          哥倫比亞 日曬<br>
+          蘭姆桶發酵 聖荷西莊園
+        </h3>
+
+        <div class="flavor-label">
+          主風味
+        </div>
+
+        <p class="flavor">
+          威士忌・黑巧克力・葡萄乾
+        </p>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="card">
+
+      <div class="card-body">
+
+        <div class="roast">
+          中淺焙
+        </div>
+
+        <h3>
+          哥倫比亞 酵素水洗<br>
+          卡斯提優 杏桃
+        </h3>
+
+        <div class="flavor-label">
+          主風味
+        </div>
+
+        <p class="flavor">
+          水蜜桃軟糖・乳酸飲・黑巧克力
+        </p>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="card">
+
+      <div class="card-body">
+
+        <div class="roast">
+          中烘焙
+        </div>
+
+        <h3>
+          思沐配方<br>
+          西達摩 × 瓜地馬拉拼配
+        </h3>
+
+        <div class="flavor-label">
+          主風味
+        </div>
+
+        <p class="flavor">
+          香檳葡萄・玫瑰花・楓糖
+        </p>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="card">
+
+      <div class="card-body">
+
+        <div class="roast">
+          深烘焙
+        </div>
+
+        <h3>
+          思沐嚴選<br>
+          哥倫比亞 × 衣索比亞拼配
+        </h3>
+
+        <div class="flavor-label">
+          主風味
+        </div>
+
+        <p class="flavor">
+          可可碎片・榛果・焦糖
+        </p>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="card">
+
+      <div class="card-body">
+
+        <div class="roast">
+          中烘焙
+        </div>
+
+        <h3>
+          榛心誠意<br>
+          哥倫比亞 × 衣索比亞 × 瓜地馬拉
+        </h3>
+
+        <div class="flavor-label">
+          主風味
+        </div>
+
+        <p class="flavor">
+          榛果醬・橘子・紅糖
+        </p>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="card">
+
+      <div class="card-body">
+
+        <div class="roast">
+          淺烘焙
+        </div>
+
+        <h3>
+          荔馬成功<br>
+          衣索比亞 日曬 西達馬班莎
+        </h3>
+
+        <div class="flavor-label">
+          主風味
+        </div>
+
+        <p class="flavor">
+          黑色莓果・荔枝・洋甘菊
+        </p>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     耳掛
+========================= -->
+
+<section
+  id="drip"
+  class="product-section">
+
+  <div class="section-title">
+
+    <small>DRIP COFFEE</small>
+
+    <h2>耳掛咖啡</h2>
+
+    <p>
+      一包一杯，旅行、辦公室或早晨都方便。
+    </p>
+
+  </div>
+
+
+  <div class="grid">
+
+
+    <article class="card">
+
+      <div class="card-body">
+
+        <div class="roast">
+          DRIP BAG
+        </div>
+
+        <h3>
+          思沐咖啡耳掛系列
+        </h3>
+
+        <div class="flavor-label">
+          沖煮建議
+        </div>
+
+        <p class="flavor">
+          每包 11g<br>
+          建議注水 165–180ml
+        </p>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     ORDER
+========================= -->
+
+<section class="order-area">
+
+  <small>ONLINE ORDER</small>
+
+  <h2>想帶一包回家？</h2>
+
+  <p>
+    點擊下方按鈕即可前往<br>
+    思沐咖啡 Google 訂購表單。
+  </p>
+
+  <a
+    class="order-btn"
+    href="https://forms.gle/sLnLfMjwsZhzxfpKA"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    前往訂購 ☕️
+
+  </a>
+
+</section>
+
+
+
+<!-- =========================
+     SHIPPING INFO
+========================= -->
+
+<div class="info-box">
+
+
+  <div>
+
+    <h3>寄送方式</h3>
+
+    <p>
+      郵局／7-11／全家店到店<br>
+      運費 NT$80
+    </p>
+
+  </div>
+
+
+  <div>
+
+    <h3>滿額免運</h3>
+
+    <p>
+      單筆訂單滿 NT$2,000<br>
+      即享免運
+    </p>
+
+  </div>
+
+
+  <div>
+
+    <h3>付款方式</h3>
+
+    <p>
+      銀行轉帳<br>
+      送出訂單後請私訊確認
+    </p>
+
+  </div>
+
+
+</div>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <strong>
+    思沐咖啡
+  </strong>
+
+
+  <div class="contact">
+
+    ThinkThough Coffee<br>
+
+    108臺北市萬華區錦德里<br>
+    西園路二段281巷27號1樓<br>
+
+    <a href="tel:0223036787">
+      02 2303 6787
+    </a>
+
+  </div>
+
+
+
+  <div class="socials">
+
+
+    <!-- INSTAGRAM -->
+
+    <a
+      class="social"
+      href="https://www.instagram.com/thinkthough_coffee/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram">
+
+      <svg viewBox="0 0 24 24">
+
+        <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.5-3.5a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"/>
+
+      </svg>
+
+    </a>
+
+
+
+    <!-- FACEBOOK -->
+
+    <a
+      class="social"
+      href="https://www.facebook.com/CaffeDearlandMuse/?locale=zh_TW"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Facebook">
+
+      <svg viewBox="0 0 24 24">
+
+        <path d="M13.5 22v-9h3l.5-3h-3.5V8.1c0-.87.29-1.46 1.52-1.46H17V4.05c-.34-.05-1.5-.15-2.85-.15-2.82 0-4.75 1.72-4.75 4.88V10H6v3h3.4v9h4.1z"/>
+
+      </svg>
+
+    </a>
+
+
+  </div>
+
+
+  <div class="copyright">
+    © THINKTHOUGH COFFEE · TAIPEI
+  </div>
+
+</footer>
+
+
+</body>
+</html>
